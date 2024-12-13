@@ -8,6 +8,13 @@ spec:
   containers:
   - name: mongo
     image: mongo:4.4
+    resources:
+      requests:
+        memory: "100Mi" # extra memeory's limit
+      limits:
+        memory: "200Mi" # allocated memory 
+    command: ["stress"]
+    args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
     ports:
       - containerPort: 27017
     env:
