@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: react-pod
+spec:
+  containers:
+  - name: node-container
+    image: nithishdocker2411/serversplitapp-frontend:latest  # Replace with your Docker image
+    ports:
+    - containerPort: 1026
+  imagePullSecrets:
+  - name: regcred 
+
